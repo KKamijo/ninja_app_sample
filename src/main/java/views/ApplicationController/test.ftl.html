@@ -1,0 +1,25 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout title="Test page">    
+
+
+<h1>${i18n("hello.test")}</h1>
+<#list errors! as error>
+	${error.constraintViolation.defaultMessage}<br/>
+</#list>
+<form method="POST" action="/add">
+<input type="text" value="${name}" name="name" placeholder="${i18n("name.hint")}" size="25" />&nbsp;
+<input type="text" value="${age}" name="age" placeholder="${i18n("age.hint")}" size="25" />&nbsp; <input type="submit" value="add employee"/>
+</form>
+</br>
+<ol>
+<li>${m1}</li>
+<li>${m2}</li>
+<li>${m3}</li>
+</ol>
+<ol>
+	<#list tests as test>
+		<li>${test}</li>
+	</#list>
+</ol>
+
+</@layout.myLayout>
